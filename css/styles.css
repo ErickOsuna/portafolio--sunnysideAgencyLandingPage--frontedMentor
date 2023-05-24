@@ -55,7 +55,7 @@ h1,h2,h3 {
 }
 
 .nav__links {
-    position: absolute;
+    position: fixed;
     top: 6em;
     left: 0;
     right: 0;
@@ -65,7 +65,6 @@ h1,h2,h3 {
     background-color: var(--white);
     display: grid;
     gap: 2em;
-
     opacity: 0;
     pointer-events: none;
     transition: .3s opacity;
@@ -77,7 +76,7 @@ h1,h2,h3 {
 }
 
 .nav__hamburger {
-    pointer-events: none;
+    pointer-events: unset;
 }
 
 .nav__links::before {
@@ -328,10 +327,21 @@ h1,h2,h3 {
     }
 
     .nav__links {
+        background-color: unset;
+        position: unset;
+        width: unset;
+        margin: unset;
+        opacity: 1;
         display: grid;
         grid-auto-flow: column;
         gap: 1.5em;
         align-items: center;
+        pointer-events: unset;
+    }
+    
+    .nav__links:target {
+        pointer-events: unset;
+        opacity: 1;
     }
 
     .nav__link {
